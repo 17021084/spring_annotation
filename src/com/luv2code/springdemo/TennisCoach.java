@@ -1,12 +1,15 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //@Component("thatSillyCoach")  // bean id
 @Component   // mặc định id nó là tennisCoach  (chữ cái đầu viết thường)
 public class TennisCoach implements Coach {
 	@Autowired   // ko cần setter nữa - field injection 
+//	@Qualifier("happyFortuneService") //  bình thường có 1 bean thì ko cần, nhưng interface FortuneService có nhiêu beans, nên phải dùng cái này để chỉ ra
+	@Qualifier("sugoiFortuneService")
 	private FortuneService fortuneService;
 	
 	//defauts constructor
