@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 //@Component("thatSillyCoach")  // bean id
 @Component   // mặc định id nó là tennisCoach  (chữ cái đầu viết thường)
 public class TennisCoach implements Coach {
-	
+	@Autowired   // ko cần setter nữa - field injection 
 	private FortuneService fortuneService;
 	
 	//defauts constructor
@@ -20,19 +20,19 @@ public class TennisCoach implements Coach {
 //		this.fortuneService = fortuneService;
 //	}
 	
-	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println(">>  TennisCoach : inside Setter ");
-	
-		this.fortuneService = fortuneService;
-	}
-
-	@Autowired
-	public void doSomeCrazyStuff(FortuneService fortuneService) {
-		System.out.println(">>  TennisCoach : Do Some Crazy STuff");
-	
-		this.fortuneService = fortuneService;
-	}
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+//		System.out.println(">>  TennisCoach : inside Setter ");
+//	
+//		this.fortuneService = fortuneService;
+//	}
+//
+//	@Autowired
+//	public void doSomeCrazyStuff(FortuneService fortuneService) {
+//		System.out.println(">>  TennisCoach : Do Some Crazy STuff");
+//	
+//		this.fortuneService = fortuneService;
+//	}
 
 //	 cứ có thằng @AutoWired là nó aoto chạy hết , theo tuần tự
 	
