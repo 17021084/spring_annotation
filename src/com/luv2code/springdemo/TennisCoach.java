@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	@Autowired   // ko cần setter nữa - field injection 
 //	@Qualifier("happyFortuneService") //  bình thường có 1 bean thì ko cần, nhưng interface FortuneService có nhiêu beans, nên phải dùng cái này để chỉ ra
-	@Qualifier("sugoiFortuneService")
+//	@Qualifier("sugoiFortuneService")
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	//defauts constructor
